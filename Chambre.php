@@ -4,14 +4,18 @@ class Chambre
     private int $_numeroChambre;
     private bool $_wifi;
     private bool $_disponibilite;
+    private float $_prix;
+    private int $_nbLits;
     //private int $_chambresDisponible; 
     //private int $_chambresIndisponible;
 
-    public function __construct(int $numeroChambre, bool $wifi, bool $disponibilite)
+    public function __construct(int $numeroChambre, bool $wifi, bool $disponibilite, float $prix, int $nbLits)
     {
         $this->_numeroChambre = $numeroChambre;
         $this->_wifi = false;
         $this->_disponibilite = false;
+        $this->_prix = $prix;
+        $this->_nbLits = $nbLits;
         //$this->_chambresDisponible = $chambreDisponible;
         //this->_chambresIndisponible = $chambresIndisponible;
     }
@@ -69,6 +73,20 @@ class Chambre
         else 
         {
             $result = "Wifi OFF";
+            return $result;
+        }
+    }
+
+    public function afficherDisponibilite()
+    {
+        if ($this->_disponibilite)
+        {
+            $result = "Chambre disponible";
+            return $result;
+        }
+        else 
+        {
+            $result = "Chambre indisponible";
             return $result;
         }
     }
