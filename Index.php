@@ -11,3 +11,4 @@ echo $marieGeorges ->getNomClient();
 echo $Ibis->getVille();
 echo $chambre1->afficherWifi();
 echo $chambre1->afficherDisponibilite();
+$Ibis->ajouterChambre($chambre1);

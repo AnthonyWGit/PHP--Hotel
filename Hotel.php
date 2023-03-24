@@ -7,17 +7,19 @@ class Hotel
     private string $_codePostal;
     private string $_ville;
     private Client $_client ;
+    private Chambre $_chambre ;
+    private array $_chambres = [];
 
-    public function __construct(string $nomHotel, string $nomRue, string $numeroRue, string $codePostal, string $ville, Client $client)
+    public function __construct(string $nomHotel, string $nomRue, string $numeroRue, string $codePostal, string $ville)
     {
         $this->_nomHotel = $nomHotel;
         $this->_nomRue = $nomRue;
         $this->_numeroRue = $numeroRue;
         $this->_codePostal = $codePostal;
         $this->_ville = $ville;
-        $this->_client = $client;
-        $this->_client->AjouterClient($this);
     }
+
+
     //SETTERS
     public function setNomHotel(string $nomHotel)
     {
@@ -68,9 +70,16 @@ class Hotel
     {
         return ($this->_client);
     }
+    //____________________________________________________
+
     public function __toString()
     {
         $result = "Blabla";
         return $result;
     }
+    public function ajouterChambre(Chambre $chambre)
+    {
+        $this->_chambres[] = $chambre;
+    }
+
 }
