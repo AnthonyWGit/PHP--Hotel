@@ -8,9 +8,6 @@ class Hotel
     private string $_ville;
     // un hotel a plusieurs chambres
     private array $_chambres = [];
-    //un hotel a plusieurs clients 
-    private array $_clients = [];
-
     public function __construct(string $nomHotel, string $nomRue, string $numeroRue, string $codePostal, string $ville)
     {
         $this->_nomHotel = $nomHotel;
@@ -40,10 +37,7 @@ class Hotel
     {
         $this->_ville = $ville;
     }
-    public function setClient(string $client)
-    {
-        $this->_clients[] = $client;
-    }
+
     // __________________GETTERS_________________________
     public function getNomHotel() : string
     {
@@ -65,17 +59,9 @@ class Hotel
     {
         return $this->_ville ;
     }
-    public function getClient() : array
-    {
-        return $this->_clients;
-    }
+
     //____________________________________________________
 
-    public function __toString()
-    {
-        $result = "Blabla";
-        return $result;
-    }
     public function ajouterChambre(Chambre $chambre)
     {
         $this->_chambres[] = $chambre;
@@ -88,6 +74,11 @@ class Hotel
         {
             $result .="Chambre numéro ".$chambre." ";
         }
+        return $result;
+    }
+    public function __toString()
+    {
+        $result = "Blabla";
         return $result;
     }
 }

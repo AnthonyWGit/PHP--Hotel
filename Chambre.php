@@ -1,7 +1,11 @@
 <?php
 class Chambre
 {
+    //La chambre est liée à UN hotel
     private Hotel $_nomHotel;
+    //La chambre peut être réservée PLUSIEURS fois
+    private array $_reservations;
+    //La chambre peut être réservée par PLUSIEURS personnes 
     private int $_numeroChambre;
     private bool $_wifi;
     private bool $_disponibilite;
@@ -79,7 +83,6 @@ class Chambre
             return $result;
         }
     }
-
     public function afficherDisponibilite()
     {
         if ($this->_disponibilite)
