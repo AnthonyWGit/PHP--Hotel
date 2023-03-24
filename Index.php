@@ -12,3 +12,5 @@ echo $Ibis->getVille();
 echo $chambre1->afficherWifi();
 echo $chambre1->afficherDisponibilite();
 $Ibis->ajouterChambre($chambre1);
+$Ibis->ajouterChambre($chambre2);
+echo $Ibis->afficherChambres();
