@@ -1,6 +1,7 @@
 <?php
 class Chambre
 {
+    private Hotel $_nomHotel;
     private int $_numeroChambre;
     private bool $_wifi;
     private bool $_disponibilite;
@@ -9,8 +10,9 @@ class Chambre
     //private int $_chambresDisponible; 
     //private int $_chambresIndisponible;
 
-    public function __construct(int $numeroChambre, bool $wifi, bool $disponibilite, float $prix, int $nbLits)
+    public function __construct(Hotel $_nomHotel, int $numeroChambre, bool $wifi, bool $disponibilite, float $prix, int $nbLits)
     {
+        $this->_nomHotel = $_nomHotel;
         $this->_numeroChambre = $numeroChambre;
         $this->_wifi = false;
         $this->_disponibilite = false;
@@ -89,5 +91,9 @@ class Chambre
             $result = "Chambre indisponible";
             return $result;
         }
+    }
+    public function infosChambre()
+    {
+        
     }
 }
