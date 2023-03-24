@@ -4,16 +4,16 @@ class Chambre
     private int $_numeroChambre;
     private bool $_wifi;
     private bool $_disponibilite;
-    private int $_chambresDisponible; 
-    private int $_chambresIndisponible;
+    //private int $_chambresDisponible; 
+    //private int $_chambresIndisponible;
 
-    public function __construct(int $numeroChambre, bool $wifi, bool $disponibilite, int $chambreDisponible, int $chambresIndisponible)
+    public function __construct(int $numeroChambre, bool $wifi, bool $disponibilite)
     {
         $this->_numeroChambre = $numeroChambre;
         $this->_wifi = false;
         $this->_disponibilite = false;
-        $this->_chambresDisponible = $chambreDisponible;
-        $this->_chambresIndisponible = $chambresIndisponible;
+        //$this->_chambresDisponible = $chambreDisponible;
+        //this->_chambresIndisponible = $chambresIndisponible;
     }
 //__________________SETTERS
     public function setNumeroChambre(int $numeroChambre)
@@ -28,7 +28,7 @@ class Chambre
     {
         $this->_disponibilite = false;
     }
-    public function setChambresDisponible(int $chambreDisponible)
+/*    public function setChambresDisponible(int $chambreDisponible)
     {
         $this->_chambresDisponible = $chambreDisponible;
     }
@@ -36,7 +36,7 @@ class Chambre
     {
         $this->_chambresIndisponible = $chambresIndisponible;
     }
-
+*/
     // ______________________________GETTERS__________________________
     public function getNumeroChambre() : int
     {
@@ -50,7 +50,7 @@ class Chambre
     {
         return $this->_disponibilite;
     }
-    public function getChambresDisponibles() : int
+/*    public function getChambresDisponibles() : int
     {
         return $this->_chambresDisponible
     }
@@ -58,5 +58,5 @@ class Chambre
     {
         return $this->_chambresIndisponible
     }
-    
+*/
 }

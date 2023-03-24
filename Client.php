@@ -15,7 +15,6 @@ class Client
         $this->_sexe = $sexe;
         $this->_clients = [];
     }
-
     // SETTERS
     public function setNomClient(string $nomClient)
     {
