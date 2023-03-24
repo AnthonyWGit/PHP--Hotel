@@ -59,4 +59,17 @@ class Chambre
         return $this->_chambresIndisponible
     }
 */
+    public function afficherWifi()
+    {
+        if ($this->_wifi)
+        {
+            $result = "Wifi ON";
+            return $result;
+        }
+        else 
+        {
+            $result = "Wifi OFF";
+            return $result;
+        }
+    }
 }

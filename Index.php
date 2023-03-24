@@ -9,3 +9,4 @@ $chambre1 = new Chambre(1, false, true);
 $chambre2 = new Chambre(2, true, true);
 echo $marieGeorges ->getNomClient();
 echo $Ibis->getVille();
+echo $chambre1->afficherWifi();
