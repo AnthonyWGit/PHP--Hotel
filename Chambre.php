@@ -4,9 +4,7 @@ class Chambre
     //La chambre est liée à UN hotel
     private Hotel $_nomHotel;
     //La chambre peut être réservée PLUSIEURS fois
-    private array $_reservations;
-    //La chambre peut être réservée par PLUSIEURS personnes 
-    private array $_clients = [];
+    private array $_reservations = [];
     private int $_numeroChambre;
     private bool $_wifi;
     private bool $_disponibilite;
