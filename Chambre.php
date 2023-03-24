@@ -7,6 +7,7 @@ class Chambre
     private bool $_disponibilite;
     private float $_prix;
     private int $_nbLits;
+    private array $_chambres;
     //private int $_chambresDisponible; 
     //private int $_chambresIndisponible;
 
@@ -18,6 +19,7 @@ class Chambre
         $this->_disponibilite = false;
         $this->_prix = $prix;
         $this->_nbLits = $nbLits;
+        $this->_chambres = [];
         //$this->_chambresDisponible = $chambreDisponible;
         //this->_chambresIndisponible = $chambresIndisponible;
     }
@@ -94,6 +96,11 @@ class Chambre
     }
     public function infosChambre()
     {
-        
+
     }
+    public function ajouterChambre($chambre)
+    {
+        $this->_chambres[] = $chambre;
+    }
+
 }
