@@ -53,7 +53,7 @@ class Client
     }
     // _______________________
 
-    public function ajouterClient(Client $client)
+    public function ajouterClient($client)
     {
         $this->_clients[] = $client;
     }

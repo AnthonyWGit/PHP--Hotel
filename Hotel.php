@@ -6,7 +6,8 @@ class Hotel
     private string $_numeroRue;
     private string $_codePostal;
     private string $_ville;
-    private Client $_client;
+    private Client $_client ;
+
     public function __construct(string $nomHotel, string $nomRue, string $numeroRue, string $codePostal, string $ville, Client $client)
     {
         $this->_nomHotel = $nomHotel;
@@ -65,6 +66,11 @@ class Hotel
     }
     public function getClient() : Client
     {
-        return var_dump($this->_client);
+        return ($this->_client);
+    }
+    public function __toString()
+    {
+        $result = "Blabla";
+        return $result;
     }
 }
