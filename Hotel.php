@@ -7,7 +7,7 @@ class Hotel
     private string $_codePostal;
     private string $_ville;
     // un hotel a plusieurs chambres
-    private array $_chambres = [];
+    private array $_chambres;
     public function __construct(string $nomHotel, string $nomRue, string $numeroRue, string $codePostal, string $ville)
     {
         $this->_nomHotel = $nomHotel;
@@ -15,6 +15,7 @@ class Hotel
         $this->_numeroRue = $numeroRue;
         $this->_codePostal = $codePostal;
         $this->_ville = $ville;
+        $this->_chambres = [];
     }
     //SETTERS
     public function setNomHotel(string $nomHotel)

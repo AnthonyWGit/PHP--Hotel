@@ -1,10 +1,11 @@
 <?php
-class Réservation
+class Reservation
 {
     //Regarder booking.com pour mieux visualiser
     private string $_dateArrivee;
     private string $_dateDepart;
     private string $_ville;
+    //Un client fait UNE réservation
     private Client $_client;
     public function __construct(string $dateArrivee, string $dateDepart, string $ville, Client $client)
     {
