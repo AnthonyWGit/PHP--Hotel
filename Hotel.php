@@ -82,4 +82,13 @@ class Hotel
         $this->_chambres[] = $chambre;
     }
 
+    public function afficherChambres() : string
+    {
+        $result = "Chambres de l'hôtel".$this->_nomHotel."<br>";
+        foreach ($this->_chambres as $chambre)
+        {
+            $result .="Chambre numéro $chambre";
+        }
+        return $result;
+    }
 }
