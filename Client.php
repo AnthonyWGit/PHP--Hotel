@@ -1,11 +1,12 @@
 <?php
 class Client
 {
+    //Le client pour avoir PLUSIEURS réservations
+    private array $_réservations = [];
     private string $_nomClient;
     private string $_prenomClient;
     private string $_age;
     private string $_sexe;
-    private array $_clients;
 
     public function __construct(string $nomClient, string $prenomClient, string $age, string $sexe)
     {
@@ -13,7 +14,6 @@ class Client
         $this->_prenomClient = $prenomClient;
         $this->_age = $age;
         $this->_sexe = $sexe;
-        $this->_clients = [];
     }
     // SETTERS
     public function setNomClient(string $nomClient)
@@ -52,9 +52,9 @@ class Client
     }
     // _______________________
 
-    public function ajouterClient($client)
+   /* public function ajouterClient($client)
     {
         $this->_clients[] = $client;
-    }
+    }*/
 
 }
