@@ -6,6 +6,7 @@ class Chambre
     //La chambre peut être réservée PLUSIEURS fois
     private array $_reservations;
     //La chambre peut être réservée par PLUSIEURS personnes 
+    private array $_clients = [];
     private int $_numeroChambre;
     private bool $_wifi;
     private bool $_disponibilite;
