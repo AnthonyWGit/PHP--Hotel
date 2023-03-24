@@ -6,9 +6,10 @@ class Hotel
     private string $_numeroRue;
     private string $_codePostal;
     private string $_ville;
-    private Client $_client ;
-    private Chambre $_chambre ;
+    // un hotel a plusieurs chambres
     private array $_chambres = [];
+    //un hotel a plusieurs clients 
+    private array $_clients = [];
 
     public function __construct(string $nomHotel, string $nomRue, string $numeroRue, string $codePostal, string $ville)
     {
@@ -18,8 +19,6 @@ class Hotel
         $this->_codePostal = $codePostal;
         $this->_ville = $ville;
     }
-
-
     //SETTERS
     public function setNomHotel(string $nomHotel)
     {
@@ -41,9 +40,9 @@ class Hotel
     {
         $this->_ville = $ville;
     }
-    public function setClient(Client $client)
+    public function setClient(string $client)
     {
-        $this->_client = $client;
+        $this->_clients[] = $client;
     }
     // __________________GETTERS_________________________
     public function getNomHotel() : string
@@ -66,9 +65,9 @@ class Hotel
     {
         return $this->_ville ;
     }
-    public function getClient() : Client
+    public function getClient() : array
     {
-        return ($this->_client);
+        return $this->_clients;
     }
     //____________________________________________________
 
@@ -87,7 +86,7 @@ class Hotel
         $result = "Chambres de l'hôtel".$this->_nomHotel."<br>";
         foreach ($this->_chambres as $chambre)
         {
-            $result .="Chambre numéro $chambre";
+            $result .="Chambre numéro ".$chambre." ";
         }
         return $result;
     }
