@@ -62,7 +62,7 @@ class Hotel
     }
     public function getVille() : string
     {
-        return $this->_nomHotel ;
+        return $this->_ville ;
     }
     public function getClient() : Client
     {
