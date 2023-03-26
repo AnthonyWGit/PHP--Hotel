@@ -2,15 +2,17 @@
 require_once('Client.php');
 require_once('Hotel.php');
 require_once('Chambre.php');
+require_once('Reservation.php');
 $result = "";
 $marieGeorges = new Client("Georges","Marie","50", "Femme");
-$Ibis = new Hotel("Ibis", "Rue de la Fonderie", "9", "67540", "Oswtald",$marieGeorges);
+$Ibis = new Hotel("Ibis", "Rue de la Fonderie", "9", "67540", "Oswtald");
 $chambre1 = new Chambre($Ibis, 1, false, true, 200.99, 2);
 $chambre2 = new Chambre($Ibis, 2, true, true, 50, 1);
 $chambre3 = new Chambre($Ibis, 3, false, true, 200.99, 2);
 $chambre4 = new Chambre($Ibis, 4, true, true, 50, 1);
 $chambre5 = new Chambre($Ibis, 5, false, true, 200.99, 2);
 $chambre6 = new Chambre($Ibis, 6, true, true, 50, 1);
+$reservation1 = new Reservation("02 mai 2023", "05 main 2023", $Ibis, $marieGeorges);
 echo $marieGeorges ->getNomClient();
 echo $Ibis->getVille();
 echo $chambre1->afficherWifi();
