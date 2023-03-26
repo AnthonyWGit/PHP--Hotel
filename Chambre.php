@@ -18,8 +18,8 @@ class Chambre
     {
         $this->_nomHotel = $_nomHotel;
         $this->_numeroChambre = $numeroChambre;
-        $this->_wifi = false;
-        $this->_disponibilite = false;
+        $this->_wifi = $wifi;
+        $this->_disponibilite = $disponibilite;
         $this->_prix = $prix;
         $this->_nbLits = $nbLits;
         $this->_nomHotel->ajouterChambre($this);
