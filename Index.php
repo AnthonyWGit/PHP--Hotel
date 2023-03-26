@@ -25,3 +25,4 @@ echo $chambre1->infosChambre();
 echo $chambre2->infosChambre();
 echo $Ibis->infosHotel();
 echo $marieGeorges->afficherReservationDuClient();
+echo $Ibis->infosReservation();

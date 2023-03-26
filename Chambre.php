@@ -10,7 +10,6 @@ class Chambre
     private bool $_disponibilite;
     private float $_prix;
     private int $_nbLits;
-
     //private int $_chambresDisponible; 
     //private int $_chambresIndisponible;
 

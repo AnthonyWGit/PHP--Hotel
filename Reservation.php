@@ -17,6 +17,7 @@ class Reservation
         $this->_numeroChambre = $numeroChambre;
         $this->_client = $client;
         $this->_client->ajouterReservation($this);
+        $this->_nomHotel->ajouterReservation($this);
     }
     //______________________SETTERS_________________________________
     public function setDepart(string $dateDepart) 
@@ -61,6 +62,7 @@ class Reservation
     }
     public function __toString()
     {
+
         $result =$this->afficherReservation();
         return $result;
     }

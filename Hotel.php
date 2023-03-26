@@ -9,6 +9,7 @@ class Hotel
     // un hotel a plusieurs chambres
     private array $_chambres;
     private array $_chambresDispo;
+    private array $_reservations;
     public function __construct(string $nomHotel, string $nomRue, string $numeroRue, string $codePostal, string $ville)
     {
         $this->_nomHotel = $nomHotel;
@@ -18,6 +19,7 @@ class Hotel
         $this->_ville = $ville;
         $this->_chambres = [];
         $this->_chambresDispo = [];
+        $this->_reservations = [];
     }
     //SETTERS
     public function setNomHotel(string $nomHotel)
@@ -80,6 +82,11 @@ class Hotel
         $this->_chambresDispo[] = $chambreDispo;
     }
  
+    public function ajouterReservation(Reservation $reservation)
+    {
+        $this->_reservations[] = $reservation;
+    }
+ 
     public function afficherChambres() : string
     {
         $result = "Chambres de l'hôtel".$this->_nomHotel."<br>";
@@ -96,6 +103,16 @@ class Hotel
         $result .= "Nombre de chambres : ".count($this->_chambres)." <br>"; //count pour compter les éléments dans un array
         $result .= "Nombre de chambres dispo : ".count($this->_chambresDispo) ."<br>";
 
+        return $result;
+    }
+    public function infosReservation() : string
+    {
+        $result = "<h5>Réservations de l'hôtel .".$this->_nomHotel." ".$this->_ville. " </h5>";
+        $result .= count($this->_reservations); "réservations";
+        foreach ($this->_reservations as $reservation)
+        {
+            $result.= $reservation;
+        }
         return $result;
     }
     public function __toString()
