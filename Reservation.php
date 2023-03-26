@@ -9,7 +9,6 @@ class Reservation
     private Client $_client; // pour afficher qui a fait la réservation
     private Hotel $_nomHotel; //pour afficher quel hotel on a réservé
     private Chambre $_numeroChambre; //pour afficher quelle chambre on réserve 
-
     public function __construct(string $dateArrivee, string $dateDepart, Hotel $nomHotel, Client $client, Chambre $numeroChambre)
     {
         $this->_dateArrivee = $dateArrivee;
