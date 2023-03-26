@@ -70,6 +70,10 @@ class Chambre
         return $this->_chambresIndisponible
     }
 */
+    public function getPrix() : float
+    {
+        return $this->_prix;
+    }
     public function afficherWifi()
     {
         if ($this->_wifi)
@@ -105,7 +109,7 @@ class Chambre
     }
     public function __toString()
     {
-        $result = "$this->_numeroChambre";
+        $result = "$this->_numeroChambre"." ".$this->afficherDisponibilite()." ".$this->afficherWifi(). " ".$this->getPrix(). " OROS ";
         return $result;
     }
 }
