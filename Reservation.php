@@ -6,14 +6,16 @@ class Reservation
     private string $_dateDepart;
     private string $_ville;
     //Un client fait UNE réservation
-    private Client $_client;
-    private Hotel $_nomHotel;
+    private Client $_client; // pour afficher qui a fait la réservation
+    private Hotel $_nomHotel; //pour afficher quel hotel on a réservé
+    private Chambre $_numeroChambre; //pour afficher quelle chambre on réserve 
 
     public function __construct(string $dateArrivee, string $dateDepart, Hotel $nomHotel, Client $client)
     {
         $this->_dateArrivee = $dateArrivee;
         $this->_dateDepart = $dateDepart;
         $this->_nomHotel = $nomHotel;
+        $this->
         $this->_client = $client;
         $this->_client->ajouterReservation($this);
     }
