@@ -7,12 +7,14 @@ class Reservation
     private string $_ville;
     //Un client fait UNE réservation
     private Client $_client;
+
     public function __construct(string $dateArrivee, string $dateDepart, string $ville, Client $client)
     {
         $this->_dateArrivee = $dateArrivee;
         $this->_dateDepart = $dateDepart;
         $this->_ville = $ville;
         $this->_client = $client;
+        $this->_client->ajouterReservation($this);
     }
     //______________________SETTERS_________________________________
     public function setDepart(string $dateDepart) 

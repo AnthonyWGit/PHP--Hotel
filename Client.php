@@ -2,7 +2,7 @@
 class Client
 {
     //Le client pour avoir PLUSIEURS réservations
-    private array $_réservations = [];
+    private array $_reservations = [];
     private string $_nomClient;
     private string $_prenomClient;
     private string $_age;
@@ -14,6 +14,7 @@ class Client
         $this->_prenomClient = $prenomClient;
         $this->_age = $age;
         $this->_sexe = $sexe;
+
     }
     // SETTERS
     public function setNomClient(string $nomClient)
@@ -56,5 +57,9 @@ class Client
     {
         $this->_clients[] = $client;
     }*/
+    public function ajouterReservation(Reservation $nomClient)
+    {
+        $this->_reservations[] = $nomClient;
+    }
 
 }
