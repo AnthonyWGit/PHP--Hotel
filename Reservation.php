@@ -54,7 +54,7 @@ class Reservation
     }
     public function afficherReservation()
     {
-        $result = "<h1>".$this->_nomHotel. " </h1>".$this->_dateArrivee. " au ".$this->_dateDepart. "<br>";
+        $result = "<em>".$this->_nomHotel. " </em>". $this->_dateArrivee. " au ".$this->_dateDepart. "<br>";
         return $result;
     }
     public function __toString()
