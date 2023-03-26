@@ -22,6 +22,7 @@ class Chambre
         $this->_disponibilite = false;
         $this->_prix = $prix;
         $this->_nbLits = $nbLits;
+        $this->_nomHotel->ajouterChambre($this);
         //$this->_chambresDisponible = $chambreDisponible;
         //this->_chambresIndisponible = $chambresIndisponible;
     }
@@ -99,5 +100,9 @@ class Chambre
     {
 
     }
-
+    public function __toString()
+    {
+        $result = "$this->_numeroChambre";
+        return $result;
+    }
 }
