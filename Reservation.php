@@ -52,4 +52,15 @@ class Reservation
     {
         return $this->_client;
     }
+    public function afficherReservation()
+    {
+        $result = "<h1>".$this->_nomHotel. " </h1>".$this->_dateArrivee. " au ".$this->_dateDepart. "<br>";
+        return $result;
+    }
+    public function __toString()
+    {
+        $result =$this->afficherReservation();
+        return $result;
+    }
+
 }
