@@ -77,5 +77,11 @@ class Hotel
         }
         return $result;
     }
+    public function infosHotel() : string
+    {
+        $result = "<h1>Hotel ".$this->_nomHotel ."</h1><br>";
+        $result = "Nombre de chambres : ".count($this->_chambres); //count pour compter les éléments dans un array
+        return $result;
+    }
 
 }
