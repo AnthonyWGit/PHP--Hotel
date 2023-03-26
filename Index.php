@@ -13,3 +13,4 @@ echo $chambre1->afficherWifi();
 echo $chambre1->afficherDisponibilite();
 echo $Ibis->afficherChambres();
 echo $chambre1->infosChambre();
+echo $chambre2->infosChambre();

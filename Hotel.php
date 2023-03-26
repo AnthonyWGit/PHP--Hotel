@@ -73,13 +73,9 @@ class Hotel
         $result = "Chambres de l'hôtel".$this->_nomHotel."<br>";
         foreach ($this->_chambres as $chambre)
         {
-            $result .="Chambre numéro ".$chambre." ";
+            $result .="Chambre numéro ".$chambre." <br>";
         }
         return $result;
     }
-    public function __toString()
-    {
-        $result = "Blabla";
-        return $result;
-    }
+
 }
