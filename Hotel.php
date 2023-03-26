@@ -8,6 +8,7 @@ class Hotel
     private string $_ville;
     // un hotel a plusieurs chambres
     private array $_chambres;
+    private array $_chambreDispo = [];
     public function __construct(string $nomHotel, string $nomRue, string $numeroRue, string $codePostal, string $ville)
     {
         $this->_nomHotel = $nomHotel;
@@ -67,7 +68,14 @@ class Hotel
     {
         $this->_chambres[] = $chambre;
     }
-
+    /* Chambres disponibles = création d'un array associatif constitué uniquement de 
+    $_chambresDispo [] = $chambre => $disponibilité OU
+    compter le nombre de chambres totales - le nombre de réservations
+    public function ajouterChambreDispo(Chambre $chambreDispo)
+    {
+        $this->_chambreDispo[] = $chambreDispo;
+    }
+    */
     public function afficherChambres() : string
     {
         $result = "Chambres de l'hôtel".$this->_nomHotel."<br>";

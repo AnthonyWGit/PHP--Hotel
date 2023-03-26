@@ -7,14 +7,13 @@ class Client
     private string $_prenomClient;
     private string $_age;
     private string $_sexe;
-
+    private Hotel $_nomHotel;
     public function __construct(string $nomClient, string $prenomClient, string $age, string $sexe)
     {
         $this->_nomClient = $nomClient;
         $this->_prenomClient = $prenomClient;
         $this->_age = $age;
         $this->_sexe = $sexe;
-
     }
     // SETTERS
     public function setNomClient(string $nomClient)
@@ -61,5 +60,13 @@ class Client
     {
         $this->_reservations[] = $nomClient;
     }
-
+    public function afficherReservationDuClient()
+    {
+        $result = "Voici les réservations de : ".$this->_prenomClient." ".$this->_nomClient." <br>";
+        foreach ($this->_reservations as $reservation)
+        {
+            $result = $this->_nomHotel. " ".$reservation;
+        }
+        return $result;
+    }
 }
