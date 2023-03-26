@@ -91,5 +91,9 @@ class Hotel
         $result = "Nombre de chambres : ".count($this->_chambres)." <br>"; //count pour compter les éléments dans un array
         return $result;
     }
-
+    public function __toString()
+    {
+        $result = $this->_nomHotel. " ".$this->_ville;
+        return $result;
+    }
 }
