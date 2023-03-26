@@ -23,6 +23,14 @@ class Chambre
         $this->_prix = $prix;
         $this->_nbLits = $nbLits;
         $this->_nomHotel->ajouterChambre($this);
+        if ( $disponibilite ==true)
+        {
+            $this->_nomHotel->ajouterChambreDispo($this);
+        }
+        else
+        {
+            null;
+        }
         //$this->_chambresDisponible = $chambreDisponible;
         //this->_chambresIndisponible = $chambresIndisponible;
     }
