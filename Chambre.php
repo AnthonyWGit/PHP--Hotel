@@ -98,7 +98,10 @@ class Chambre
     }
     public function infosChambre()
     {
-
+        $result = "Chambre ".$this->_numeroChambre." .<br>";
+        $result .= $this->afficherWifi();
+        $result .= $this->afficherDisponibilite();
+        return $result;
     }
     public function __toString()
     {
