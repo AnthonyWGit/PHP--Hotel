@@ -75,7 +75,7 @@ class Client
             $pognon[] = ($reservation->getChambre()->getPrix());
         }
         $pognon = array_sum($pognon). "$.";
-        $result = "Total dépensé : $pognon";
+        $result .= "Total dépensé : $pognon";
 
         return $result;
     }
