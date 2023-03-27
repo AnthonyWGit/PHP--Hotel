@@ -4,20 +4,20 @@ class Reservation
     //Regarder booking.com pour mieux visualiser
     private string $_dateArrivee;
     private string $_dateDepart;
-    private string $_ville;
     //Un client fait UNE réservation
-    private Client $_client; // pour afficher qui a fait la réservation
-    private Hotel $_nomHotel; //pour afficher quel hotel on a réservé
-    private Chambre $_numeroChambre; //pour afficher quelle chambre on réserve 
-    public function __construct(string $dateArrivee, string $dateDepart, Hotel $nomHotel, Client $client, Chambre $numeroChambre)
+    private Client $_client; // pour afficher qui a fait la réservation : _c
+    private Hotel $_hotel; //pour afficher quel hotel on a réservé 
+    private Chambre $_chambre; //pour afficher quelle chambre on réserve 
+    public function __construct(string $dateArrivee, string $dateDepart, Hotel $hotel, Client $client, Chambre $chambre)
     {
         $this->_dateArrivee = $dateArrivee;
         $this->_dateDepart = $dateDepart;
-        $this->_nomHotel = $nomHotel;
-        $this->_numeroChambre = $numeroChambre;
+        $this->_hotel = $hotel;
+        $this->_chambre = $chambre;
         $this->_client = $client;
         $this->_client->ajouterReservation($this);
-        $this->_nomHotel->ajouterReservation($this);
+        $this->_hotel->ajouterReservation($this);
+        $this->_chambre->ajouterReservation($this);
     }
     //______________________SETTERS_________________________________
     public function setDepart(string $dateDepart) 
@@ -27,10 +27,6 @@ class Reservation
     public function setArrivee(string $dateArrivee)
     {
         $this->_dateArrivee = $dateArrivee;
-    }
-    public function setVille(string $ville)
-    {
-        $this->_ville = $ville;
     }
     public function setClient(Client $client)
     {
@@ -46,25 +42,18 @@ class Reservation
     {
         return $this->_dateArrivee;
     }
-    public function getVille() : string
-    {
-        return $this->_ville;
-    }
     public function getClient() : Client
     {
         return $this->_client;
     }
-    public function afficherReservation()
+    public function getChambre() : Chambre
     {
-        $result = "<em>".$this->_nomHotel. " -----</em> Chambre ".$this->_numeroChambre.
-        " *** ". $this->_dateArrivee. " au ".$this->_dateDepart. "<br>";
-        return $result;
+        return $this->_chambre;
     }
     public function __toString()
     {
-
-        $result =$this->afficherReservation();
+        $result =" -----</em> Chambre ".$this->_chambre.
+        " *** (". $this->_chambre->afficherWifi()." - ". $this->_chambre->getNbLits()." lits - ".$this->_chambre->getPrix()." $) du " . $this->_dateArrivee. ". au ".$this->_dateDepart. "<br>";
         return $result;
     }
-
 }
