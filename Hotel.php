@@ -92,7 +92,8 @@ class Hotel
         $result = "Chambres de l'hôtel".$this->_nomHotel."<br>";
         foreach ($this->_chambres as $chambre)
         {
-            $result .="Chambre numéro ".$chambre." <br>";
+            $result .="Chambre numéro ".$chambre." ".$chambre->afficherWifi(). " ".$chambre->afficherDisponibilite().
+            " ".str_replace(".",",",$chambre->getPrix()). " $<br>";
         }
         return $result;
     }
@@ -116,10 +117,10 @@ class Hotel
     public function infosReservation() : string
     {
         $result = "<h5>Réservations de l'hôtel .".$this->_nomHotel." ".$this->_ville. " </h5>";
-        $result .= count($this->_reservations); "réservations";
+        $result .= count($this->_reservations). " réservations <br>";
         foreach ($this->_reservations as $reservation)
         {
-            $result.= $reservation;
+            $result.= $reservation->getClient(). $reservation;
         }
         return $result;
     }
