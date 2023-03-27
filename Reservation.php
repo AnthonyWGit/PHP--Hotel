@@ -50,10 +50,15 @@ class Reservation
     {
         return $this->_chambre;
     }
+    public function getHotel() : Hotel
+    {
+        return $this->_hotel;
+    }
     public function __toString()
     {
-        $result =" -----</em> Chambre ".$this->_chambre.
-        " *** (". $this->_chambre->afficherWifi()." - ". $this->_chambre->getNbLits()." lits - ".$this->_chambre->getPrix()." $) du " . $this->_dateArrivee. ". au ".$this->_dateDepart. "<br>";
+        $result =" -----</em> Chambre ".$this->_chambre." ( ".$this->getChambre()->afficherWifi();
+        $result.=" ~ ".$this->getChambre()->getNbLits()." Lits ~ ". $this->getChambre()->getPrix(). "$) ***";
+        $result .= " du " . $this->_dateArrivee. " au ".$this->_dateDepart. "<br>";
         return $result;
     }
 }
