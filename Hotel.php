@@ -89,7 +89,7 @@ class Hotel
  
     public function afficherChambres() : string
     {
-        $result = "Chambres de l'hôtel".$this->_nomHotel."<br>";
+        $result = "<h3>Chambres de l'hôtel ".$this->_nomHotel." ".$this->_ville. " </h3><br>";
         foreach ($this->_chambres as $chambre)
         {
             $result .="Chambre numéro ".$chambre->getNumeroChambre()." ".$chambre->afficherWifi(). " ".$chambre->afficherDisponibilite().
@@ -100,7 +100,7 @@ class Hotel
     public function infosHotel() : string
     {
         $soustraction = count($this->_chambres) - count($this->_chambresDispo);
-        $result = "<h3>Hotel ".$this->_nomHotel ."</h3><br>";
+        $result = "<h3>Hotel ".$this->_nomHotel ." ".$this->_ville." </h3><br>";
         $result .= $this->_numeroRue. " ".$this->_nomRue." ".$this->_ville. " ".$this->_codePostal." <br>";
         $result .= "Nombre de chambres : ".count($this->_chambres)." <br>"; //count pour compter les éléments dans un array
         $result .= "Nombre de chambres dispo : ".count($this->_chambresDispo) ."<br>";
