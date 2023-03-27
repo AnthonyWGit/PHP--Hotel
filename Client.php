@@ -64,11 +64,16 @@ class Client
     public function afficherReservationDuClient() 
     {
         $result = "Voici les réservations de : ".$this->_prenomClient." ".$this->_nomClient." <br>";
+        $result .= count($this->_reservations). " réservations. <br>";
         foreach ($this->_reservations as $reservation)
         {
-            $result .= $reservation;
+            $result .= "<strong>".$this->_nomHotel." </strong>".$reservation." ";
         }
         return $result;
     }
-
+    public function __toString()
+    {
+        $result = $this->_nomClient. " " .$this->_prenomClient;
+        return $result;
+    }
 }
