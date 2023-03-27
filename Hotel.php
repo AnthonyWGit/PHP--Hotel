@@ -98,11 +98,19 @@ class Hotel
     }
     public function infosHotel() : string
     {
+        $soustraction = count($this->_chambres) - count($this->_chambresDispo);
         $result = "<h3>Hotel ".$this->_nomHotel ."</h3><br>";
         $result .= $this->_numeroRue. " ".$this->_nomRue." ".$this->_ville. " ".$this->_codePostal." <br>";
         $result .= "Nombre de chambres : ".count($this->_chambres)." <br>"; //count pour compter les éléments dans un array
         $result .= "Nombre de chambres dispo : ".count($this->_chambresDispo) ."<br>";
-
+        if ($soustraction = 1)
+        {
+            $result .= "Chambre réservée : ".$soustraction."<br><br>";
+        }
+        else
+        {
+            $result .= "Chambres réservées : ".$soustraction."<br><br>";
+        }
         return $result;
     }
     public function infosReservation() : string
