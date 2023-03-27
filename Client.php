@@ -61,10 +61,7 @@ class Client
     {
         $this->_reservations[] = $reservation;
     }
-    public function totalPrixReservations(Reservation $reservation)
-    {
 
-    }
     public function afficherReservationDuClient() 
     {
         $result = "Voici les réservations de : ".$this->_prenomClient." ".$this->_nomClient." <br>";
