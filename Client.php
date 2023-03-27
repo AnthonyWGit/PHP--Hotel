@@ -62,7 +62,7 @@ class Client
         $this->_reservations[] = $reservation;
     }
 
-    public function afficherReservationDuClient() 
+    public function afficherReservationDuClient() : string
     {
         $result = "Voici les réservations de : ".$this->_prenomClient." ".$this->_nomClient." <br>";
         $result .= count($this->_reservations). " réservations. <br>";

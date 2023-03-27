@@ -99,7 +99,7 @@ class Chambre
             return $result;
         }
     }
-    public function afficherDisponibilite()
+    public function afficherDisponibilite() : string
     {
         if ($this->_disponibilite)
         {
