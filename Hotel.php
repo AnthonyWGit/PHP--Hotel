@@ -114,16 +114,23 @@ class Hotel
         }
         return $result;
     }
-    public function infosReservation() : string
+    public function infosReservation() 
     {
         $result = "<h5>Réservations de l'hôtel .".$this->_nomHotel." ".$this->_ville. " </h5>";
-        $result .= count($this->_reservations). " réservations <br>";
-        foreach ($this->_reservations as $reservation)
+        if (empty($this->_chambres)== false)
         {
-            $result.="<strong>".$reservation->getClient(). "</strong> | Chambre ". $reservation->getChambre()." | ";
-            $result.= "du ".$reservation->getArrivee(). " au ".$reservation->getDepart() ."<br><br>";
+            $result .= count($this->_reservations). " réservations <br>";
+            foreach ($this->_reservations as $reservation)
+            {
+                $result.="<strong>".$reservation->getClient(). "</strong> | Chambre ". $reservation->getChambre()." | ";
+                $result.= "du ".$reservation->getArrivee(). " au ".$reservation->getDepart() ."<br><br>"; 
+            }
+        }   
+        else
+        {
+            $result = "<br>Cet hotel est délabré et n'a plus de chambres.<br>";
         }
-        return $result;
+    return $result;
     }
     public function __toString()
     {

@@ -7,7 +7,7 @@ require_once('Reservation.php');
 $result = "";
 //Instancier des hotels
 $ibisStbg = new Hotel("Ibis", "Rue de la Fonderie", "9", "67540", "Oswtald");
-$paxHotelParis = new Hotel("Pax Hotel Paris","Rue Simart", "7", "75018", "Paris");
+$paxHotelParis = new Hotel("Pax","Rue Simart", "7", "75018", "Paris");
 //Instancier des client(e)s
 $marieGeorges = new Client("Georges","Marie","50", "Femme",$ibisStbg);
 $cantalCharleot = new Client("Cantal","Charlot","43","Homme",$ibisStbg);
@@ -37,3 +37,4 @@ echo $chambre2->infosChambre();
 echo $ibisStbg->infosHotel();
 echo $marieGeorges->afficherReservationDuClient();
 echo $ibisStbg->infosReservation();
+echo $paxHotelParis->infosReservation();
