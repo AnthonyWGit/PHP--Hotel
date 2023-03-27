@@ -7,14 +7,13 @@ class Client
     private string $_prenomClient;
     private string $_age;
     private string $_sexe;
-    private Hotel $_nomHotel;
-    public function __construct(string $nomClient, string $prenomClient, string $age, string $sexe, Hotel $nomHotel)
+
+    public function __construct(string $nomClient, string $prenomClient, string $age, string $sexe)
     {
         $this->_nomClient = $nomClient;
         $this->_prenomClient = $prenomClient;
         $this->_age = $age;
         $this->_sexe = $sexe;
-        $this->_nomHotel = $nomHotel;
     }
     // SETTERS
     public function setNomClient(string $nomClient)
@@ -68,7 +67,7 @@ class Client
         $result .= count($this->_reservations). " réservations. <br>";
         foreach ($this->_reservations as $reservation)
         {
-            $result .= "<strong>".$this->_nomHotel." </strong>".$reservation." ";
+            $result .= "<strong>".$reservation->getClient()." </strong>".$reservation." ";
             $pognon[] = ($reservation->getChambre()->getPrix());
         }
         $pognon = array_sum($pognon). "$.";
