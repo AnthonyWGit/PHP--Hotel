@@ -61,6 +61,10 @@ class Client
     {
         $this->_reservations[] = $reservation;
     }
+    public function totalPrixReservations(Reservation $reservation)
+    {
+
+    }
     public function afficherReservationDuClient() 
     {
         $result = "Voici les réservations de : ".$this->_prenomClient." ".$this->_nomClient." <br>";
@@ -68,7 +72,11 @@ class Client
         foreach ($this->_reservations as $reservation)
         {
             $result .= "<strong>".$this->_nomHotel." </strong>".$reservation." ";
+            $pognon[] = ($reservation->getChambre()->getPrix());
         }
+        $pognon = array_sum($pognon). "$.";
+        $result = "Total dépensé : $pognon";
+
         return $result;
     }
     public function __toString()
