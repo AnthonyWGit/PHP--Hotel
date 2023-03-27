@@ -2,7 +2,7 @@
 class Chambre
 {
     //La chambre est liée à UN hotel
-    private Hotel $_nomHotel;
+    private Hotel $_Hotel;
     //La chambre peut être réservée PLUSIEURS fois
     private array $_reservations = [];
     private int $_numeroChambre;
@@ -15,16 +15,16 @@ class Chambre
 
     public function __construct(Hotel $_nomHotel, int $numeroChambre, bool $wifi, bool $disponibilite, float $prix, int $nbLits)
     {
-        $this->_nomHotel = $_nomHotel;
+        $this->_Hotel = $_nomHotel;
         $this->_numeroChambre = $numeroChambre;
         $this->_wifi = $wifi;
         $this->_disponibilite = $disponibilite;
         $this->_prix = $prix;
         $this->_nbLits = $nbLits;
-        $this->_nomHotel->ajouterChambre($this);
+        $this->_Hotel->ajouterChambre($this);
         if ( $disponibilite ==true)
         {
-            $this->_nomHotel->ajouterChambreDispo($this);
+            $this->_Hotel->ajouterChambreDispo($this);
         }
         else
         {
@@ -81,7 +81,12 @@ class Chambre
     {
         return $this->_prix;
     }
-    public function afficherWifi()
+    public function getNbLits() : int
+    {
+        return $this->_nbLits;
+    }
+    //_______________________________________METHODESç____________________________
+    public function afficherWifi() : string
     {
         if ($this->_wifi)
         {
@@ -114,9 +119,13 @@ class Chambre
         $result .= $this->afficherDisponibilite()."<br>";
         return $result;
     }
+    public function ajouterReservation(Reservation $reservation)
+    {
+        $this->_reservations[] = $reservation;
+    }
     public function __toString()
     {
-        $result = "$this->_numeroChambre"." ".$this->afficherDisponibilite()." ".$this->afficherWifi(). " ".$this->getPrix(). " OROS ";
+        $result = "$this->_numeroChambre";
         return $result;
     }
 }
